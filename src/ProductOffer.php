@@ -22,7 +22,7 @@ final class ProductOffer
     ) {
     }
 
-    public function setRetailPrice(Money $price)
+    public function setRetailPrice(Money $price): void
     {
         $this->retailPrice = $price;
     }

@@ -8,7 +8,7 @@ use Money\Money;
 
 final class CheapestOfferFilter implements ProductOffersFilterInterface
 {
-    public function filter(ProductOffersCollection $offers): ProductOffer
+    public function filter(ProductOffersCollection $offers): ?ProductOffer
     {
         $cheapestPrice = null;
         $resultOffer = null;

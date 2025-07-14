@@ -6,14 +6,14 @@ use Money\Money;
 
 final class RetailPriceCalculator
 {
-    public function calculate(ProductOffersCollection $offers)
+    public function calculate(ProductOffersCollection $offers): void
     {
         foreach ($offers->getAll() as $offer) {
             $this->calculatePriceWithInterestRate($offer);
         }
     }
 
-    public function calculatePriceWithInterestRate(ProductOffer $offer)
+    public function calculatePriceWithInterestRate(ProductOffer $offer): void
     {
         $rate = $offer->discountless ? '50' : (float) $this->getRateByPrice($offer->supplierPrice);
         $rate /= 100;
@@ -38,7 +38,7 @@ final class RetailPriceCalculator
 
         foreach ($steps as $rate => $upperLimit) {
             if ($price->lessThan($upperLimit)) {
-                return $rate;
+                return (string) $rate;
             }
         }
 

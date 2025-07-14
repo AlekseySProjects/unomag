@@ -14,8 +14,11 @@ use Alex\Automag\Enum\ProductLocationsTypesEnum;
 
 class ProductPriceManagerTest extends TestCase
 {
-    protected $products;
-    protected $suppliers;
+    /** @var array<string, Product> $products */
+    protected array $products;
+
+    /** @var array<string, Supplier> $suppliers */
+    protected array $suppliers;
 
     public function setUp(): void
     {
@@ -34,7 +37,7 @@ class ProductPriceManagerTest extends TestCase
         ];
     }
 
-    public function test_exists_in_warehouse()
+    public function test_exists_in_warehouse(): void
     {
         $suppliers = $this->suppliers;
         $products = $this->products;
@@ -75,7 +78,7 @@ class ProductPriceManagerTest extends TestCase
         $this->assertSame($expectedOffer, ProductPriceManager::getRetailOffer($offersCollection));
     }
 
-    public function test_cheapest_from_suppliers_if_not_exists_in_warehouse()
+    public function test_cheapest_from_suppliers_if_not_exists_in_warehouse(): void
     {
         $suppliers = $this->suppliers;
         $products = $this->products;

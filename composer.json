@@ -12,7 +12,8 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.82",
-        "phpunit/phpunit": "^12.2"
+        "phpunit/phpunit": "^12.2",
+        "phpstan/phpstan": "^2.1"
     },
     "require": {
         "moneyphp/money": "^4.7"

@@ -7,5 +7,5 @@ use Alex\Automag\ProductOffer;
 
 interface ProductOffersFilterInterface
 {
-    public function filter(ProductOffersCollection $offers): ProductOffersCollection|ProductOffer;
+    public function filter(ProductOffersCollection $offers): null|ProductOffersCollection|ProductOffer;
 }

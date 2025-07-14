@@ -4,6 +4,9 @@ namespace Alex\Automag;
 
 final class ProductOffersCollection
 {
+    /**
+	 * @var \SplObjectStorage<ProductOffer, null> $offers
+	 */
     private \SplObjectStorage $offers;
 
     public function __construct(
@@ -23,12 +26,13 @@ final class ProductOffersCollection
         return $this;
     }
 
-    public function getAll()
+    /** @return \SplObjectStorage<ProductOffer, null> */
+    public function getAll(): \SplObjectStorage
     {
         return $this->offers;
     }
 
-    public function count()
+    public function count(): int
     {
         return $this->offers->count();
     }

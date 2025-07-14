@@ -10,9 +10,14 @@ use Alex\Automag\Enum\SuppliersTypesEnum;
 use Alex\Automag\RetailPriceCalculator;
 
 class RetailPriceCalculatorTest extends TestCase {
-    protected $products;
-    protected $suppliers;
-    protected $calculator;
+    
+    /** @var array<string, Product> $products */
+    protected array $products;
+
+    /** @var array<string, Supplier> $suppliers */
+    protected array $suppliers;
+
+    protected RetailPriceCalculator $calculator;
 
     public function setUp(): void
     {
@@ -26,7 +31,7 @@ class RetailPriceCalculatorTest extends TestCase {
         ];
     }
 
-    public function test_price_499() {
+    public function test_price_499(): void {
 
         $offer = new ProductOffer(
             id: 1,
@@ -42,7 +47,7 @@ class RetailPriceCalculatorTest extends TestCase {
         $this->assertTrue($expected->equals($offer->getPrice()));
     }
     
-    public function test_price_500() {
+    public function test_price_500(): void {
 
         $offer = new ProductOffer(
             id: 1,
@@ -58,7 +63,7 @@ class RetailPriceCalculatorTest extends TestCase {
         $this->assertTrue($expected->equals($offer->getPrice()));
     }
     
-    public function test_price_without_rate() {
+    public function test_price_without_rate(): void {
 
         $offer = new ProductOffer(
             id: 1,
@@ -74,7 +79,7 @@ class RetailPriceCalculatorTest extends TestCase {
         $this->assertTrue($expected->equals($offer->getPrice()));
     }
     
-    public function test_discountless_price() {
+    public function test_discountless_price(): void {
 
         $offer = new ProductOffer(
             id: 1,

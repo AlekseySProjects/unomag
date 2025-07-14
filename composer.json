@@ -1,5 +1,6 @@
 {
     "name": "alex/automag",
+    "description": "Test project for unoMAG",
     "autoload": {
         "psr-4": {
             "Alex\\Automag\\": "src/"
@@ -19,7 +20,8 @@
         "moneyphp/money": "^4.7"
     },
     "scripts": {
-        "test": "phpunit",
+        "test": "vendor/bin/phpunit",
         "style": "php-cs-fixer fix"
-    }
+    },
+    "license": "Apache-2.0"
 }
